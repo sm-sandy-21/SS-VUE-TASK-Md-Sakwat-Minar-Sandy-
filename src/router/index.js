@@ -1,20 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 import Employee from '@/views/Employee'
 import Admin from '@/views/Admin'
 import AddEmployee from '@/components/AddEmployee'
+import AddAdmin from '@/components/AddAdmin'
 
 Vue.use(VueRouter)
 
 const routes = [
+  
   {
     path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/employee',
     name: 'Employee',
     component: Employee
   },
@@ -27,6 +23,11 @@ const routes = [
     path: '/admin',
     name: 'Admin',
     component: Admin
+  },
+  {
+    path: '/addadmin',
+    name: 'AddAdmin',
+    component: AddAdmin
   },
 ]
 
