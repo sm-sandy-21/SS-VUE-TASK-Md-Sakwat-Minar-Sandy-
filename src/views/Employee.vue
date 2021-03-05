@@ -75,6 +75,7 @@
           </v-dialog>
         </v-toolbar>
       </template>
+
       <template v-slot:[`item.actions`]="{ item }">
         <v-btn color="ma-1" fab @click="editItem(item)"
           ><v-icon> mdi-account-edit </v-icon>
