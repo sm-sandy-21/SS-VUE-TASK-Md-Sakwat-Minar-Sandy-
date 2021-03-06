@@ -56,7 +56,7 @@ export default new Vuex.Store({
         email: newemployee.email,
       });
 
-      router.push("Employee");
+      router.push("/");
     },
 
     DELETE_EMPLOYEE(state, deleteEmployee) {

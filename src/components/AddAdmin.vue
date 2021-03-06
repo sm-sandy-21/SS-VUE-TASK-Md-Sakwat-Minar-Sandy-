@@ -83,7 +83,7 @@
     methods: {
 
         onSubmit(){  
-            this.$store.dispatch('addEmployee',this.newAdmin)
+            this.$store.dispatch('addAdmin',this.newAdmin)
         },
       reset () {
         this.$refs.form.reset()
