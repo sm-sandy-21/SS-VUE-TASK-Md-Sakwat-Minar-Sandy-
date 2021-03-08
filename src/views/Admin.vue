@@ -16,7 +16,7 @@
           <v-dialog v-model="dialog" max-width="500px">
             <v-card>
               <v-card-title>
-                <span class="headline">Edit Admin</span>
+                <span class="headline">Update Admin</span>
               </v-card-title>
 
               <v-card-text>
@@ -46,9 +46,6 @@
 
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="blue darken-1" text @click="close">
-                  Cancel
-                </v-btn>
                 <v-btn color="blue darken-1" text @click="save"> Save </v-btn>
               </v-card-actions>
             </v-card>
@@ -154,16 +151,7 @@ export default {
 
     deleteItemConfirm() {
       this.$store.dispatch("deleteAdmin", this.editedIndex);
-      //this.Admin.splice(this.editedIndex, 1)
       this.closeDelete();
-    },
-
-    close() {
-      this.dialog = false;
-      this.$nextTick(() => {
-        this.editedItem = Object.assign({}, this.defaultItem);
-        this.editedIndex = -1;
-      });
     },
 
     closeDelete() {
@@ -176,7 +164,7 @@ export default {
 
     save() {
      this.$store.dispatch("editAdmin", this.editedItem);
-      this.close();
+      this.dialog = false;
     },
   },
 };
