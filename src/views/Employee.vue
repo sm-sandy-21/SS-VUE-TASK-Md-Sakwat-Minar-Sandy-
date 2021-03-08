@@ -19,7 +19,7 @@
           <v-dialog v-model="dialog" max-width="500px">
             <v-card>
               <v-card-title>
-                <span class="headline">{{ formTitle }}</span>
+                <span class="headline">Update Employee info</span>
               </v-card-title>
 
               <v-card-text>
@@ -49,9 +49,6 @@
 
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="blue darken-1" text @click="close">
-                  Cancel
-                </v-btn>
                 <v-btn color="blue darken-1" text @click="save"> Save </v-btn>
               </v-card-actions>
             </v-card>
@@ -131,10 +128,6 @@ export default {
     ...mapGetters({
       allEmpolyee: "allEmpolyee",
     }),
-
-    formTitle() {
-      return this.editedIndex === -1 ? "New Item" : "Edit Item";
-    },
   },
 
   watch: {
@@ -167,14 +160,6 @@ export default {
       this.closeDelete();
     },
 
-    close() {
-      this.dialog = false;
-      this.$nextTick(() => {
-        this.editedItem = Object.assign({}, this.defaultItem);
-        this.editedIndex = -1;
-      });
-    },
-
     closeDelete() {
       this.dialogDelete = false;
       this.$nextTick(() => {
@@ -185,7 +170,7 @@ export default {
 
     save() {
       this.$store.dispatch("editEmployee", this.editedItem)
-      this.close();
+      this.dialog = false;
     },
   },
 };
