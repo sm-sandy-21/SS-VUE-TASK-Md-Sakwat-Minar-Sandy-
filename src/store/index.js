@@ -65,7 +65,11 @@ export default new Vuex.Store({
     },
 
     EDITE_EMPLOYEE(state, editEmployee) {
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> Master
       state.employee.push({
         name: editEmployee.name,
         phone: editEmployee.phone,
@@ -91,7 +95,10 @@ export default new Vuex.Store({
     },
 
     EDITE_Admin(state, editAdmin) {
+<<<<<<< HEAD
     
+=======
+>>>>>>> Master
       state.admin.push({
         name: editAdmin.name,
         phone: editAdmin.phone,

@@ -16,7 +16,7 @@
           <v-dialog v-model="dialog" max-width="500px">
             <v-card>
               <v-card-title>
-                <span class="headline">Update Admin</span>
+                <span class="headline">Update Admin info</span>
               </v-card-title>
 
               <v-card-text>
@@ -46,6 +46,7 @@
 
               <v-card-actions>
                 <v-spacer></v-spacer>
+                <v-btn color="blue darken-1" text @click="cancel"> cancel </v-btn>
                 <v-btn color="blue darken-1" text @click="save"> Save </v-btn>
               </v-card-actions>
             </v-card>
@@ -163,7 +164,13 @@ export default {
     },
 
     save() {
-     this.$store.dispatch("editAdmin", this.editedItem);
+     
+        this.$store.dispatch("editAdmin", this.editedItem);  
+      this.dialog = false;
+    },
+     cancel() {
+     
+      this.$store.dispatch("editAdmin", this.editedItem);  
       this.dialog = false;
     },
   },

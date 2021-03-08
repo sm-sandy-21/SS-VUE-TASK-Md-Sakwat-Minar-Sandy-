@@ -49,6 +49,7 @@
 
               <v-card-actions>
                 <v-spacer></v-spacer>
+                 <v-btn color="blue darken-1" text @click="cancel"> Cancle </v-btn>
                 <v-btn color="blue darken-1" text @click="save"> Save </v-btn>
               </v-card-actions>
             </v-card>
@@ -144,7 +145,6 @@ export default {
       this.editedIndex = this.$store.state.employee.indexOf(item);
       this.editedItem = Object.assign({}, item);
       this.dialog = true;
-
        this.$store.dispatch("deleteEmployee", this.editedIndex);
     },
 
@@ -159,7 +159,6 @@ export default {
       this.closeDelete();
     },
 
-
     closeDelete() {
       this.dialogDelete = false;
       this.$nextTick(() => {
@@ -169,8 +168,12 @@ export default {
     },
 
     save() {
-      this.$store.dispatch("editEmployee", this.editedItem);
-      this.dialog = false ;
+      this.$store.dispatch("editEmployee", this.editedItem)
+      this.dialog = false;
+    },
+     cancel() {
+      this.$store.dispatch("editEmployee", this.editedItem)
+      this.dialog = false;
     },
   },
 };
