@@ -1,5 +1,8 @@
 <template>
   <v-card >
+    <v-card-title primary-title>
+      Admin Information
+    </v-card-title>
   <v-form class="ma-3 pa-2"
     ref="form"
     v-model="valid"

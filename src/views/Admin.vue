@@ -46,6 +46,7 @@
 
               <v-card-actions>
                 <v-spacer></v-spacer>
+                <v-btn color="blue darken-1" text @click="cancel"> cancel </v-btn>
                 <v-btn color="blue darken-1" text @click="save"> Save </v-btn>
               </v-card-actions>
             </v-card>
@@ -168,6 +169,11 @@ export default {
     save() {
      
         this.$store.dispatch("editAdmin", this.editedItem);  
+      this.dialog = false;
+    },
+     cancel() {
+     
+      this.$store.dispatch("editAdmin", this.editedItem);  
       this.dialog = false;
     },
   },
