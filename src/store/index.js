@@ -65,9 +65,6 @@ export default new Vuex.Store({
     },
 
     EDITE_EMPLOYEE(state, editEmployee) {
-      let index = state.employee.indexOf();
-      console.log(index + 1);
-      state.employee.splice(index + 1, 1);
 
       state.employee.push({
         name: editEmployee.name,
@@ -94,10 +91,7 @@ export default new Vuex.Store({
     },
 
     EDITE_Admin(state, editAdmin) {
-      let index = state.admin.indexOf();
-      console.log(index + 1);
-      state.admin.splice(index + 1, 1);
-
+    
       state.admin.push({
         name: editAdmin.name,
         phone: editAdmin.phone,

@@ -140,12 +140,10 @@ export default {
 
   methods: {
     editItem(item) {
-      this.editedIndex = this.Admin.indexOf(item);
+      this.editedIndex = this.$store.state.admin.indexOf(item);
       this.editedItem = Object.assign({}, item);
       this.dialog = true;
-
-      // console.log("editItem")
-      // console.log(item.name)
+      this.$store.dispatch("deleteAdmin", this.editedIndex);
     },
 
     deleteItem(item) {
@@ -177,11 +175,7 @@ export default {
     },
 
     save() {
-      if (this.editedIndex > -1) {
-        Object.assign(this.Admin[this.editedIndex], this.editedItem);
-      } else {
-        this.$store.dispatch("editAdmin", this.editedItem);
-      }
+     this.$store.dispatch("editAdmin", this.editedItem);
       this.close();
     },
   },

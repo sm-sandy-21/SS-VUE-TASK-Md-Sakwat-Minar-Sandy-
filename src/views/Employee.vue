@@ -148,12 +148,11 @@ export default {
 
   methods: {
     editItem(item) {
-      this.editedIndex = this.employee.indexOf(item);
+      this.editedIndex = this.$store.state.employee.indexOf(item);
       this.editedItem = Object.assign({}, item);
       this.dialog = true;
 
-      console.log("editItem");
-      console.log(item.name);
+       this.$store.dispatch("deleteEmployee", this.editedIndex);
     },
 
     deleteItem(item) {
@@ -184,11 +183,7 @@ export default {
     },
 
     save() {
-      if (this.editedIndex > -1) {
-        Object.assign(this.employee[this.editedIndex], this.editedItem);
-      } else {
-        this.$store.dispatch("editEmployee", this.editedItem);
-      }
+      this.$store.dispatch("editEmployee", this.editedItem);
       this.close();
     },
   },
